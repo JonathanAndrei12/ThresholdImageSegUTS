@@ -39,6 +39,10 @@ while True:
     ret, snpThreshold = cv2.threshold(snpImage2, 100, 255, cv2.THRESH_BINARY)
     ret, gaussianThreshold = cv2.threshold(gaussianImage2, 100, 255, cv2.THRESH_BINARY)
 
+    cv2.imwrite("Thresholded/rawThresholded.JPG", rawThreshold)
+    cv2.imwrite("Thresholded/snpThresholded.JPG", snpThreshold)
+    cv2.imwrite("Thresholded/gaussianThresholded.JPG", gaussianThreshold)
+
     #Show Raw comparement
     rawArray = np.concatenate((rawImage, rawImage2, rawThreshold), axis= 1)
     cv2.imshow("Raw Noise", rawArray)
